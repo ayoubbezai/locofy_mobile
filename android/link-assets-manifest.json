@@ -1,0 +1,101 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/BalooBhai2/baloo-bhai-2-latin-700-normal.ttf",
+      "sha1": "922a9b03505da7655f9425558e931c9e8d5400d8"
+    },
+    {
+      "path": "assets/fonts/BalooBhai2/Baloo",
+      "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    },
+    {
+      "path": "assets/fonts/BalooBhai2/baloo-bhai-2-latin-600-normal.ttf",
+      "sha1": "e93afcfe1b5925402ccc243ea939e6f49a758579"
+    },
+    {
+      "path": "assets/fonts/BalooBhai2/baloo-bhai-2-latin-800-normal.ttf",
+      "sha1": "53c34a3f3992c239858f2300fe10e63961c9bfc4"
+    },
+    {
+      "path": "assets/fonts/BalooBhai2/baloo-bhai-2-latin-400-normal.ttf",
+      "sha1": "6cc01910e1824c516465d643370fa768b497456e"
+    },
+    {
+      "path": "assets/fonts/BalooBhai2/baloo-bhai-2-latin-500-normal.ttf",
+      "sha1": "703180c15ed0237f778643d29e5eb587105aa685"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-700-normal.ttf",
+      "sha1": "8832205ef314a1fdba382b16928a9f089c0cba8e"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-100-normal.ttf",
+      "sha1": "a8a28422ff9b980219681ff87f4808d62a95cc73"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-600-normal.ttf",
+      "sha1": "6b944f332a5dd9373d9cedb74ccfcd9b14cd733b"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-800-normal.ttf",
+      "sha1": "11079b9f35032d76f01abc93b01c94fb793b226f"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-900-normal.ttf",
+      "sha1": "8b4ad79e802aef1b70bc5ab32e504fef38d28f6c"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-400-normal.ttf",
+      "sha1": "e998789b2b29e6bfe940239dac1c474cf6ccf2b3"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-300-normal.ttf",
+      "sha1": "de87756684e4d01a0a467e9f79fa2a3ecf388d4f"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-200-normal.ttf",
+      "sha1": "fddbe73ed9ab3f807319ec794754d6bd7933dc02"
+    },
+    {
+      "path": "assets/fonts/Roboto/roboto-latin-500-normal.ttf",
+      "sha1": "470692aaafca29d65bf65fecd3964fc63e58abc2"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-900-normal.ttf",
+      "sha1": "69b2732975a22e0a9186d2fe8eec9a8f1fd75203"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-800-normal.ttf",
+      "sha1": "8739fe40049720ce9434a1c766ae27ea55d740da"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-200-normal.ttf",
+      "sha1": "221b6cf6de1d8599415e499c3b7261690dac0639"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-500-normal.ttf",
+      "sha1": "ee92a2f3a1f189399a5890849106321d872543ae"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-400-normal.ttf",
+      "sha1": "55da6af145c957de15ac6c6e55fa841a83369b8f"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-300-normal.ttf",
+      "sha1": "bf5c07f96f1e1a6c02b35033ec5162a18e2195e4"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-100-normal.ttf",
+      "sha1": "4d61f8927c472baf5d3f812e216b76f0c071e4df"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-600-normal.ttf",
+      "sha1": "e039e4a47733ee6f4b19a1cd5f626e1bba6105ef"
+    },
+    {
+      "path": "assets/fonts/Inter/inter-latin-700-normal.ttf",
+      "sha1": "34eb34633e83f1aea439833a7de0aebad6edda55"
+    }
+  ]
+}
