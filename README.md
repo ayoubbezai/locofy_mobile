@@ -16,6 +16,9 @@ This is a React Native travel application built as part of the Developatic evalu
 - **Type Filtering**: Filter destinations by Mountain, Beach, or City
 - **Data Source**: 51 destinations from provided JSON file stored in `assets/data/destinations.json`
 
+### 📸 Images Note
+The provided JSON file does not include image URLs for destinations. To maintain visual consistency with the Figma design, I extracted 4 destination images from the Figma file and implemented a rotation system that cycles through these images for all destinations (using modulo operator: `index % 4`).
+
 ### 🎨 Design Notes
 - **Figma Compliance**: UI is pixel-perfect match to the Figma design
 - **Bottom Tab Bar**: Minor improvement made - added focused/unfocused states for better UX (original Figma design lacked visual feedback)

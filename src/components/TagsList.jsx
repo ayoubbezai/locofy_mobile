@@ -1,9 +1,9 @@
 import { FlatList, StyleSheet, View, Text } from "react-native";
-import Hotel from '../../../assets/images/tags/Hotel.svg';
-import Attractions from '../../../assets/images/tags/Atractions.svg';
-import Eats from '../../../assets/images/tags/Eats.svg';
-import Flight from '../../../assets/images/tags/Flight.svg';
-import Train from '../../../assets/images/tags/Train.svg';
+import Hotel from '../../assets/images/tags/Hotel.svg';
+import Attractions from '../../assets/images/tags/Atractions.svg';
+import Eats from '../../assets/images/tags/Eats.svg';
+import Flight from '../../assets/images/tags/Flight.svg';
+import Train from '../../assets/images/tags/Train.svg';
 
 const Tags = [
     { id: 1, label: 'Hotel', Icon: Hotel },

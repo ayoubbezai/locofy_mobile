@@ -28,7 +28,6 @@ export default function HomeScreen() {
     const {data  ,  isError,isLoading , refetch} = useDestinations({perPage , page });
     const ITEM_WIDTH = 150;
     const CARD_WIDTH = ITEM_WIDTH + spacing.sm ;
-console.log('isLoading:', isLoading);
 
     const onScrollEndDrag = () => {
         const timeout = setTimeout(()=>(
@@ -134,10 +133,9 @@ console.log('isLoading:', isLoading);
                 <View style={styles.trendingDestinations}>
                     <View style={styles.destinationHeader}>
                        <Text style={styles.titleText}>Trending Destinations</Text>
-                       <TouchableOpacity > <Text style={styles.seeAllButton} onPress={()=> navigation.navigate("destinations")}>
-                        See All
-                        </Text>
-                        </TouchableOpacity>
+                       <TouchableOpacity onPress={()=> navigation.navigate("destinations")}>
+                           <Text style={styles.seeAllButton}>See All</Text>
+                       </TouchableOpacity>
                     </View>
                     {isError ? (
                     <View style={{ padding: 16, alignItems: 'center' }}>

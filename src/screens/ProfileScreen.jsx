@@ -98,28 +98,24 @@ export default  function ProfileScreen  (){
                         keyExtractor={(item, index) => item.id?.toString() || `item-${index}`}
                         ItemSeparatorComponent={() => <View style={{ height: spacing.xxl }} />}
                         renderItem={({item})=>(
-                            <View style={styles.itemCard}>
-                                <item.Icon/>
-                                {item.isNew ?
-                                <View style={styles.newItemContainer}>
-                                <Text style={styles.itemText}>
-                                    {item.name}
-                                </Text>
-                                    <View style={styles.newContainer}>
-                                        <Text style={styles.newText}>NEW</Text>
-
-                                    </View>    
-                                </View>
-                            
-                            :
-                                <Text style={styles.itemText}>
-                                    {item.name}
-                                </Text>
-                            }
-            
-                            </View>    
-                            )}
-
+                            <TouchableOpacity style={styles.itemCard}>
+                                <item.Icon width={24} height={24} />
+                                {item.isNew ? (
+                                    <View style={styles.newItemContainer}>
+                                        <Text style={styles.itemText}>
+                                            {item.name}
+                                        </Text>
+                                        <View style={styles.newContainer}>
+                                            <Text style={styles.newText}>NEW</Text>
+                                        </View>    
+                                    </View>
+                                ) : (
+                                    <Text style={styles.itemText}>
+                                        {item.name}
+                                    </Text>
+                                )}
+                            </TouchableOpacity>    
+                        )}
                         />
                         <View style={styles.questionContainer}>
                             <Question width={22} height={22}/>

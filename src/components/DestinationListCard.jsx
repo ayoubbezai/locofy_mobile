@@ -2,10 +2,10 @@ import React from 'react';
 import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
 import { colors, spacing, typography } from '../theme';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Des1 from '../../../assets/images/destinations/destination1.png';
-import Des2 from '../../../assets/images/destinations/destination2.png';
-import Des3 from '../../../assets/images/destinations/destination3.png';
-import Des4 from '../../../assets/images/destinations/destination4.png';
+import Des1 from '../../assets/images/destinations/destination1.png';
+import Des2 from '../../assets/images/destinations/destination2.png';
+import Des3 from '../../assets/images/destinations/destination3.png';
+import Des4 from '../../assets/images/destinations/destination4.png';
 
 export default function DestinationListCard({ item, index }) {
     const images = [Des1, Des2, Des3, Des4];
@@ -32,7 +32,7 @@ export default function DestinationListCard({ item, index }) {
                     </View>
                 </View>
                 
-                {item.types && item.types.length > 0 && (
+                {item.types && item.types.length > 0 ? (
                     <View style={styles.tagsRow}>
                         {item.types.slice(0, 2).map((type, idx) => (
                             <View key={idx} style={styles.tag}>
@@ -40,7 +40,7 @@ export default function DestinationListCard({ item, index }) {
                             </View>
                         ))}
                     </View>
-                )}
+                ) : null}
             </View>
         </TouchableOpacity>
     );

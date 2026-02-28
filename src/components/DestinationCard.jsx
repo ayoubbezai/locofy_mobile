@@ -3,27 +3,33 @@ import { View, StyleSheet, Image, Text } from 'react-native';
 import { spacing } from '../theme/spacing';
 import { colors } from '../theme/color';
 import { typography } from '../theme/typography';
-import Des1 from '../../../assets/images/destinations/destination1.png'
-import Des2 from '../../../assets/images/destinations/destination2.png'
-import Des3 from '../../../assets/images/destinations/destination3.png'
-import Des4 from '../../../assets/images/destinations/destination4.png'
+import Des1 from '../../assets/images/destinations/destination1.png'
+import Des2 from '../../assets/images/destinations/destination2.png'
+import Des3 from '../../assets/images/destinations/destination3.png'
+import Des4 from '../../assets/images/destinations/destination4.png'
 
 export default function DestinationCard({ item , index }) {
     const images = [Des1,Des2,Des3,Des4];
-    const imageSource = images[index % images.length]; 
+    const imageSource = images[index % images.length];
+    
+    if (!item || !item.city_name) {
+        return null;
+    }
+    
     return (
         <View style={styles.container}>
             <Image 
-                source={imageSource} 
-
+                source={imageSource}
+                style={styles.image}
+                resizeMode="cover"
             />
             <View style={styles.placeData}>
                 <View style={styles.placeNameContainer}>
                     <Text style={styles.cityText}>{item.city_name}</Text>
-                    <Text style={styles.countryText}>{item.country}</Text>
+                    <Text style={styles.countryText}>{item.country || ''}</Text>
                 </View>
                 <View style={styles.flightCodeContainer}>
-                    <Text style={styles.flightCodeText}>{item.flight_code}</Text>
+                    <Text style={styles.flightCodeText}>{item.flight_code || ''}</Text>
                 </View>
             </View>
         </View>
