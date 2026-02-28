@@ -7,9 +7,9 @@ import Paris from '../../assets/images/home/paris.png';
 import Heart from '../../assets/icons/heart.svg';
 import FlightExemple from '../../assets/images/home/flightExemple.svg';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { colors } from '../shared/theme/color';
-import { typography } from '../shared/theme/typography';
-import { spacing } from '../shared/theme/spacing';
+
+import { colors, spacing, typography } from '../shared/theme';
+
 import { useDestinations } from '../shared/hooks/useDestination'
 import DestinationCard from '../shared/components/DestinationCard'
 import SkeletonCard from '../shared/components/SkeletonCard'
