@@ -1,98 +1,151 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Travel App - Developatic Evaluation Test
 
-# Getting Started
+## Overview
+This is a React Native travel application built as part of the Developatic evaluation test. The app implements a pixel-perfect UI based on the provided Figma design with trending destinations carousel, profile management, and a full destinations listing screen.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Requirements Implementation
 
-## Step 1: Start Metro
+### ✅ Core Features
+- **Home Screen**: Displays basic info with a horizontal auto-animated carousel of 5 trending destinations
+- **Profile Screen**: User profile with editable fields (name, location, bio)
+- **Destinations Screen**: Full-screen list with pagination and filtering (custom design as requested)
+- **Auto-animated Carousel**: 3-second interval with smooth transitions
+- **Manual Scrolling**: Snap-to-item behavior for better UX
+- **Navigation**: "See All" button navigates to full destinations list
+- **Local Pagination**: Simulated API with setTimeout (600ms-1s delay), loading 10 items per page
+- **Type Filtering**: Filter destinations by Mountain, Beach, or City
+- **Data Source**: 51 destinations from provided JSON file stored in `assets/data/destinations.json`
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 🎨 Design Notes
+- **Figma Compliance**: UI is pixel-perfect match to the Figma design
+- **Bottom Tab Bar**: Minor improvement made - added focused/unfocused states for better UX (original Figma design lacked visual feedback)
+- **Destinations Screen**: Custom design created as this screen was not provided in Figma (as requested in requirements)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Tech Stack
+- **React Native CLI** (not Expo)
+- **JavaScript** (no TypeScript)
+- **React Navigation** for routing
+- **React Query** for data fetching and caching
+- **React Native Vector Icons** for icons
+- **React Native SVG** for custom icons
 
-```sh
-# Using npm
-npm start
+## Architecture
 
-# OR using Yarn
-yarn start
+### Why This Architecture?
+For this simple project, we chose a clean and straightforward architecture that separates concerns without over-engineering in this small test , but could change of course from project to another:
+
+```
+src/
+├── app/                    # App entry and navigation
+│   ├── App.jsx
+│   └── navigations/        # Navigation setup
+├── screens/                # Screen components
+├── shared/                 # Shared resources
+│   ├── components/         # Reusable UI components
+│   ├── hooks/              # Custom React hooks
+│   ├── services/           # Data fetching logic
+│   └── theme/              # Design system (colors, typography, spacing)
+└── assets/                 # Static files (images, data)
 ```
 
-## Step 2: Build and run your app
+### Key Decisions:
+1. **Service Layer**: Separated data fetching from UI components for better testability and reusability
+2. **Custom Hooks**: `useDestinations` hook encapsulates data fetching logic with React Query
+3. **Theme System**: Centralized colors, typography, and spacing for consistency
+4. **Component Reusability**: Created `DestinationCard`, `SkeletonCard`, and `DestinationListCard` for DRY code
+5. **React Query**: Handles caching, loading states, and refetching automatically
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## Bonus Features
+we added:
+- **Search Functionality**: Real-time search with 500ms debouncing
+- **Skeleton Loading**: Better UX with animated loading placeholders
+- **Error Handling**: Retry mechanism for failed requests
+- **Infinite Scroll**: Smooth pagination on scroll
 
-### Android
+## Installation & Setup
 
-```sh
-# Using npm
-npm run android
+### Prerequisites
+- Node.js (v16 or higher)
+- React Native CLI
+- Xcode (for iOS) or Android Studio (for Android)
+- CocoaPods (for iOS)
 
-# OR using Yarn
-yarn android
+### Steps
+```bash
+# Install dependencies
+npm install
+
+# iOS setup
+cd ios && pod install && cd ..
+
+# Run on iOS
+npx react-native run-ios
+
+# Run on Android
+npx react-native run-android
 ```
 
-### iOS
+## Project Structure Details
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### Services (`src/shared/services/`)
+- `destinations.service.js`: Handles data fetching with setTimeout simulation, filtering, and pagination
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+### Hooks (`src/shared/hooks/`)
+- `useDestination.js`: React Query hook for destinations data with caching strategy
 
-```sh
-bundle install
-```
+### Components (`src/shared/components/`)
+- `DestinationCard.jsx`: Carousel item card
+- `DestinationListCard.jsx`: Full-width list item card
+- `SkeletonCard.jsx`: Loading placeholder for carousel
+- `DestinationListSkeleton.jsx`: Loading placeholder for list
 
-Then, and every time you update your native dependencies, run:
+### Screens (`src/screens/`)
+- `HomeScreen.jsx`: Main screen with carousel
+- `ProfileScreen.jsx`: User profile with edit mode
+- `DestinationsScreen.jsx`: Full destinations list with filters
+- `CommingSoon.jsx`: Placeholder for future features
 
-```sh
-bundle exec pod install
-```
+## Features Breakdown
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### Home Screen
+- Auto-animated carousel (3s interval)
+- Manual scrolling with snap behavior
+- Shows 5 trending destinations
+- "See All" button for navigation
+- Upcoming flight card
+- Tag filters
 
-```sh
-# Using npm
-npm run ios
+### Profile Screen
+- Editable user information
+- Profile image
+- Bio section
+- Menu items (Payment, Covid Advisory, Referral Code, Settings, Logout)
+- Toggle edit mode
 
-# OR using Yarn
-yarn ios
-```
+### Destinations Screen
+- Search bar with debouncing
+- Filter chips (All, Beach, Mountain, City)
+- Infinite scroll pagination (10 items per page)
+- Skeleton loading states
+- "End of list" indicator
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## Data Flow
+1. User opens app → Home screen loads 5 destinations
+2. Service simulates API call with setTimeout (1s delay)
+3. React Query caches the result
+4. User clicks "See All" → Navigates to Destinations screen
+5. Loads first 10 items with pagination
+6. User scrolls → Automatically loads next 10 items
+7. User applies filter → Resets to page 1 and filters results
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Notes
+- All data is local (no backend integration)
+- Filtering and pagination work together seamlessly
+- Service layer handles all business logic
+- UI components are purely presentational
 
-## Step 3: Modify your app
+---
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# locofy_mobile
+**Developed by**: Ayoub Bezai  
+**Date**: February 2026  
+**For**: Developatic Evaluation Test
