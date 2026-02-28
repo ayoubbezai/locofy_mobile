@@ -7,15 +7,16 @@ import Paris from '../../assets/images/home/paris.png';
 import Heart from '../../assets/icons/heart.svg';
 import FlightExemple from '../../assets/images/home/flightExemple.svg';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
-import { colors, spacing, typography } from '../shared/theme';
-
-import { useDestinations } from '../shared/hooks/useDestination'
-import DestinationCard from '../shared/components/DestinationCard'
-import SkeletonCard from '../shared/components/SkeletonCard'
-import TagList from '../shared/components/TagsList'
+import { colors, spacing, typography } from '../theme';
+import { useDestinations } from '../hooks/useDestination'
+import DestinationCard from '../components/DestinationCard'
+import SkeletonCard from '../components/SkeletonCard'
+import TagList from '../components/TagsList'
+import { useNavigation } from "@react-navigation/native";
 
 export default function HomeScreen() {
+    const navigation = useNavigation();
+
     const [page,setPage] = useState(1);
     const [perPage ] = useState(5);
     const carouselRef = useRef(null);
@@ -133,7 +134,7 @@ console.log('isLoading:', isLoading);
                 <View style={styles.trendingDestinations}>
                     <View style={styles.destinationHeader}>
                        <Text style={styles.titleText}>Trending Destinations</Text>
-                       <TouchableOpacity > <Text style={styles.seeAllButton}>
+                       <TouchableOpacity > <Text style={styles.seeAllButton} onPress={()=> navigation.navigate("destinations")}>
                         See All
                         </Text>
                         </TouchableOpacity>
@@ -284,7 +285,7 @@ backgroundImage: {
     width : undefined,
     height : undefined,
     resizeMode : 'cover',
-    
+
 },
 parisText : {
     color : 'white',

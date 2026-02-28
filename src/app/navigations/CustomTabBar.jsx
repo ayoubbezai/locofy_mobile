@@ -13,9 +13,7 @@ import ItineraryIconFocused from "../../../assets/images/tab/itinerary-focused.s
 import OffersIconFocused from "../../../assets/images/tab/offers-focused.svg";
 import UserProfileIconFocused from "../../../assets/images/tab/userprofile-focused.svg";
 
-import { colors } from "../../shared/theme/color";
-import { spacing } from "../../shared/theme/spacing";
-import { typography } from "../../shared/theme/typography";
+import { colors, spacing, typography } from "../../theme";
 
 const icons = {
   Explore: ExploreIcon,

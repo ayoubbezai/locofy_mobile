@@ -9,7 +9,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabs from './navigations/BottomTabs'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import DestinationsScreen from '../screens/DestinationsScreen'
 const Stack = createNativeStackNavigator();
 const queryClient = new QueryClient();
 function App() {
@@ -30,7 +30,7 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator  screenOptions={{ headerShown: false }}>
           <Stack.Screen name='main' component={BottomTabs}/>
-
+          <Stack.Screen name='destinations' component={DestinationsScreen}/>
 
         </Stack.Navigator>
 

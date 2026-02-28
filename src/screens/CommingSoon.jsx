@@ -1,5 +1,5 @@
 import { View , StyleSheet, Text } from "react-native"
-import { colors , typography } from '../shared/theme';
+import { colors , typography } from '../theme';
 
 export default  function CommingSoon  (){
     return (

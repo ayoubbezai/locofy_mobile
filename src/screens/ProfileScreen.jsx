@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { View , SafeAreaView, StyleSheet, Text , TextInput,Image, FlatList, TouchableOpacity } from "react-native"
-import { colors , typography ,spacing } from '../shared/theme';
+import { colors , typography ,spacing } from '../theme';
 import BGImage from '../../assets/images/profile/profile_background.jpg'
 import Profile from '../../assets/images/home/profile.jpg'
 import Card from '../../assets/images/profile/creadit_card.svg'

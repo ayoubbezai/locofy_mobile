@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"]
+    },
+    "jsx": "react-native",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": ["**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules", "Pods", "android", "ios"]
+}
