@@ -149,7 +149,7 @@ export default function HomeScreen() {
                         (
                         <FlatList 
                         style={{ marginLeft: -spacing.xxl, marginRight: -spacing.xxl }}
-                        contentContainerStyle={{ paddingHorizontal: spacing.xxl }}
+                        contentContainerStyle={{ paddingHorizontal: spacing.xxl, paddingVertical: spacing.sm }}
                         data={[...Array(5).keys()]} 
                         horizontal
                         showsHorizontalScrollIndicator={false}
@@ -163,7 +163,7 @@ export default function HomeScreen() {
                         (
                         <FlatList 
                         style={{ marginLeft: -spacing.xxl, marginRight: -spacing.xxl }}
-                        contentContainerStyle={{ paddingHorizontal: spacing.xxl }}
+                        contentContainerStyle={{ paddingHorizontal: spacing.xxl, paddingVertical: spacing.sm }}
                         data={data?.data}
                         horizontal
                         showsHorizontalScrollIndicator={false}
@@ -366,6 +366,7 @@ flightFirstElement : {
     gap : spacing.xxs ,
     flex: 1,
     minWidth: 0,
+    alignItems: 'flex-start',
 },
 flightFirstElementAbrv : {
     color : colors.primary, 
@@ -378,7 +379,6 @@ flightFirstElementText :{
     fontFamily : typography.interBold,
     fontSize : typography.sm ,
     fontWeight: typography.regular ,
-    textAlign: 'right',
 },
     flightLastElement : {
         gap : spacing.xxs ,
