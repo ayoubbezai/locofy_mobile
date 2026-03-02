@@ -9,6 +9,8 @@ import Code from '../../assets/images/profile/code.svg'
 import Settings from '../../assets/images/profile/settings.svg'
 import Logout from '../../assets/images/profile/logout.svg'
 import Question from '../../assets/images/profile/question.svg'
+import Back from '../../assets/images/profile/back.svg'
+import Pen from '../../assets/images/profile/pen.svg'
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -35,7 +37,7 @@ export default  function ProfileScreen  (){
                 <View style={styles.header}>
                     <View style={styles.headerIconContainer}>
                         <TouchableOpacity onPress={()=> navigation.goBack()}>
-                            <Icon name="arrow-back" size={24} color="#000" />
+                            <Back width={24} height={24}/>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.headerIconContainer}>
@@ -43,7 +45,7 @@ export default  function ProfileScreen  (){
                             {isEditing ? (
                                 <Icon name="close" size={24} color="#000" />
                             ) : (
-                                <Icon name="create-outline" size={24} color="#000" />
+                                <Pen width={24} height={24}/>
                             )}
                         </TouchableOpacity>
                     </View>
@@ -145,7 +147,7 @@ const styles = StyleSheet.create({
     },
     backgroundImage: {
     position: "absolute",
-    top: -40,        // move up
+    top: -80,
     left: 0,
     right: 0,
     width: "100%",
@@ -268,7 +270,7 @@ header : {
     alignItems : 'center',
     position: "absolute",
     width : '100%',
-    top : 78
+    top : 50
 
 },
 headerIconContainer : {

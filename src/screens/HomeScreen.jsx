@@ -149,7 +149,7 @@ export default function HomeScreen() {
                         (
                         <FlatList 
                         style={{ marginLeft: -spacing.xxl, marginRight: -spacing.xxl }}
-                        contentContainerStyle={{ paddingHorizontal: spacing.xxl, paddingVertical: spacing.sm }}
+                        contentContainerStyle={{ paddingHorizontal: spacing.xxl, paddingTop: 0, paddingBottom: spacing.sm }}
                         data={[...Array(5).keys()]} 
                         horizontal
                         showsHorizontalScrollIndicator={false}
@@ -163,7 +163,7 @@ export default function HomeScreen() {
                         (
                         <FlatList 
                         style={{ marginLeft: -spacing.xxl, marginRight: -spacing.xxl }}
-                        contentContainerStyle={{ paddingHorizontal: spacing.xxl, paddingVertical: spacing.sm }}
+                        contentContainerStyle={{ paddingHorizontal: spacing.xxl, paddingTop: 0, paddingBottom: spacing.sm }}
                         data={data?.data}
                         horizontal
                         showsHorizontalScrollIndicator={false}
@@ -424,7 +424,7 @@ flightFirstElementText :{
     fontWight : typography.regular,
   }, 
   trendingDestinations : { 
-    gap : spacing.lg,
+    gap : 14,
     flexDirection : 'column',
 
   },
