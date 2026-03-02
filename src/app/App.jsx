@@ -24,18 +24,17 @@ function App() {
 
   return (
     <SafeAreaProvider>
-          <QueryClientProvider client={queryClient}>
-
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NavigationContainer>
-        <Stack.Navigator  screenOptions={{ headerShown: false }}>
-          <Stack.Screen name='main' component={BottomTabs}/>
-          <Stack.Screen name='destinations' component={DestinationsScreen}/>
-
-        </Stack.Navigator>
-
-      </NavigationContainer>
-          </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <View style={styles.appContainer}>
+          <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="#fff" />
+          <NavigationContainer>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+              <Stack.Screen name='main' component={BottomTabs}/>
+              <Stack.Screen name='destinations' component={DestinationsScreen}/>
+            </Stack.Navigator>
+          </NavigationContainer>
+        </View>
+      </QueryClientProvider>
     </SafeAreaProvider>
   );
 }
@@ -54,6 +53,10 @@ function AppContent() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  appContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
   },
 });
 

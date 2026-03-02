@@ -61,8 +61,8 @@ export default function HomeScreen() {
  
 
             <View style={styles.navBar}>
-                <TouchableOpacity>
-                    <Ionicons name="menu" size={32} color="black" style={styles.menu} />
+                <TouchableOpacity onPress={() => {}}>
+                    <Ionicons name="menu" size={32} color="black" />
                 </TouchableOpacity>
 
                 <View style={styles.logoContiner}>
@@ -113,7 +113,7 @@ export default function HomeScreen() {
                             </View> */}
                                     <View style={styles.flightLastElement}>
                                 <Text style={styles.flightFirstElementAbrv}>LAX</Text>
-                                <Text style={styles.flightFirstElementText}>Los Angeles</Text>
+                                <Text style={styles.flightFirstElementText} numberOfLines={1}>Los Angeles</Text>
                             </View>
                         </View>
                             <View style={styles.hr} />
@@ -346,6 +346,8 @@ upcomingFlightFirstRow : {
 },
 flightFirstElement : {
     gap : spacing.xxs ,
+    flex: 1,
+    minWidth: 0,
 },
 flightFirstElementAbrv : {
     color : colors.primary, 
@@ -361,8 +363,9 @@ flightFirstElementText :{
 },
     flightLastElement : {
         gap : spacing.xxs ,
-        alignItems : 'flex-end'
-        
+        alignItems : 'flex-end',
+        flex: 1,
+        minWidth: 0,
     },
     hr : {
         borderBottomColor: '#F5F6F8',

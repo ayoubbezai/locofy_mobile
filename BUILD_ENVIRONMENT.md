@@ -172,13 +172,7 @@ pod install
 cd ..
 ```
 
-## Notes
 
-- The project uses JavaScript (not TypeScript) as requested
-- All data is local (no backend integration required)
-- The app name is "FickleFlight" (display name) but internally registered as "mobile"
-- Images are stored locally in `assets/` directory
-- Destination data is in `assets/data/destinations.json`
 
 ## Contact
 
