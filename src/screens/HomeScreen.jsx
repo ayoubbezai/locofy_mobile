@@ -61,7 +61,7 @@ export default function HomeScreen() {
  
 
             <View style={styles.navBar}>
-                <TouchableOpacity onPress={() => {}}>
+                <TouchableOpacity style={styles.menuButton} onPress={() => {}}>
                     <Ionicons name="menu" size={32} color="black" />
                 </TouchableOpacity>
 
@@ -113,7 +113,7 @@ export default function HomeScreen() {
                             </View> */}
                                     <View style={styles.flightLastElement}>
                                 <Text style={styles.flightFirstElementAbrv}>LAX</Text>
-                                <Text style={styles.flightFirstElementText} numberOfLines={1}>Los Angeles</Text>
+                                <Text style={styles.flightFirstElementText}>Los Angeles</Text>
                             </View>
                         </View>
                             <View style={styles.hr} />
@@ -148,6 +148,8 @@ export default function HomeScreen() {
                     :isLoading?
                         (
                         <FlatList 
+                        style={{ marginLeft: -spacing.xxl, marginRight: -spacing.xxl }}
+                        contentContainerStyle={{ paddingHorizontal: spacing.xxl }}
                         data={[...Array(5).keys()]} 
                         horizontal
                         showsHorizontalScrollIndicator={false}
@@ -160,7 +162,8 @@ export default function HomeScreen() {
                         
                         (
                         <FlatList 
-                          style={{  marginRight: -spacing.xxl  }}
+                        style={{ marginLeft: -spacing.xxl, marginRight: -spacing.xxl }}
+                        contentContainerStyle={{ paddingHorizontal: spacing.xxl }}
                         data={data?.data}
                         horizontal
                         showsHorizontalScrollIndicator={false}
@@ -209,9 +212,20 @@ const styles = StyleSheet.create({
     navBar: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         padding: 16,
         width: "100%",
         backgroundColor: colors.whiteBg,
+    },
+    menuButton: {
+        width: 32,
+        height: 32,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    logoContiner: {
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     profileImage: {
         borderRadius: 999,
@@ -220,6 +234,10 @@ const styles = StyleSheet.create({
     },
     profileImageContiner: {
         position: 'relative',
+        width: 36,
+        height: 36,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     orangeDot: {
         position: 'absolute',
@@ -360,12 +378,13 @@ flightFirstElementText :{
     fontFamily : typography.interBold,
     fontSize : typography.sm ,
     fontWeight: typography.regular ,
+    textAlign: 'right',
 },
     flightLastElement : {
         gap : spacing.xxs ,
         alignItems : 'flex-end',
         flex: 1,
-        minWidth: 0,
+        maxWidth: 90,
     },
     hr : {
         borderBottomColor: '#F5F6F8',
